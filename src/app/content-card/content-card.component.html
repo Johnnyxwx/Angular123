@@ -1,6 +1,15 @@
-<div class="content-card" [ngClass]="{'last': last}">
 
+<div class="content-card" [ngClass]="{'last': last, 'News': type=='News', 'Story': type=='Story'}" >
+<p appTextDecoration [sun] = '"underline"'>
+  {{stuff.title}}
+</p>
+  <div *ngIf='stuff.imgUrl'>
     <img src="{{stuff.imgUrl}}" (click)="console()">
+
+  </div>
+  <div *ngIf='!stuff.imgUrl'>
+    <img src="https://apod.nasa.gov/apod/image/0812/LickMoonrise_baldridge_c800.jpg">
+  </div>
 <br />
 
   <p class="super-bold">
@@ -15,7 +24,7 @@
 <p>
   {{stuff.author}}
 </p>
-  <p>
+  <p appTextDecoration [sun] = '"line-through"'>
     {{stuff.tags}}
   </p>
 

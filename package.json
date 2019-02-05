@@ -9,8 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "gc": "ng generate component",
-    "gp": "ng generate a pipe",
-    "gd": "ng generate a directive"
+    "gp": "ng generate pipe",
+    "gd": "ng generate directive"
   },
   "private": true,
   "dependencies": {

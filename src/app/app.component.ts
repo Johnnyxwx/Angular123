@@ -7,6 +7,6 @@ import {ContentListComponent} from './content-list/content-list.component';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'as2';
+  title = 'as3';
 }
 

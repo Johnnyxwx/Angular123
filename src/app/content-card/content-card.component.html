@@ -1,4 +1,5 @@
-<div class="content-card" [ngClass]="{'last': last}">
+
+<div class="content-card" [ngClass]="{'last': last, 'News': type=='News', 'Story': type=='Story'}" >
 
     <img src="{{stuff.imgUrl}}" (click)="console()">
 <br />

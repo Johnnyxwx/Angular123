@@ -18,35 +18,51 @@ constructor() { }
         author: 'Tim Toth',
         imgUrl: 'assets/img/img.jpg',
         body: 'good book',
-        type: 'romance'
+        type: 'News'
     };
       this.content5[1] = {
           contentId: 2,
           author: 'John Kobersi',
           imgUrl: 'assets/img/img.jpg',
           body: 'bad book',
-          type: 'funny'
+          type: 'Story'
       };
       this.content5[2] = {
           contentId: 3,
           author: 'The Dancer',
           imgUrl: 'assets/img/img.jpg',
           body: 'Dancing book',
-          type: 'Magic'
+          type: 'Story'
       };
       this.content5[3] = {
           contentId: 4,
           author: 'The globe',
           imgUrl: 'assets/img/img.jpg',
           body: 'Earth book',
-          type: 'Foot work'
+          type: 'News'
       };
       this.content5[4] = {
           contentId: 5,
           author: 'Khabib',
           imgUrl: 'assets/img/img.jpg',
           body: 'Nurmeganadov book',
-          type: 'Knockout'
+          type: 'Story'
       };
     }
+
+    search(x: string) {
+    if(x == 'news') {
+        for(let cell of this.content5)
+            if (cell.type == 'News') {
+                console.log(cell)
+            }
+    }
+    else if(x == 'story') {
+        for(let cell of this.content5)
+            if (cell.type == 'Story') {
+                console.log(cell)
+            }
+            }
+    }
+
 }

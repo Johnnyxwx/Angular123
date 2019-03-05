@@ -7,6 +7,8 @@ import { ContentCardComponent } from './content-card/content-card.component';
 import { ContentListComponent } from './content-list/content-list.component';
 import { DefaultTypePipe } from './default-type.pipe';
 import { TextDecorationDirective } from './text-decoration.directive';
+import { MessagesComponent } from './messages/messages.component';
+import { FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { TextDecorationDirective } from './text-decoration.directive';
     ContentCardComponent,
     ContentListComponent,
     DefaultTypePipe,
-    TextDecorationDirective
+    TextDecorationDirective,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+      FormsModule
 
   ],
   providers: [],

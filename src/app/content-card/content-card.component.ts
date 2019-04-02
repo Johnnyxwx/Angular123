@@ -1,24 +1,21 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Content} from './content-card-helper';
+import { Component, Input, OnInit } from '@angular/core';
+import {Content} from "./content-list-helper";
 
 @Component({
   selector: 'app-content-card',
   templateUrl: './content-card.component.html',
-  styleUrls: ['./content-card.component.css']
+  styleUrls: ['./content-card.component.scss']
 })
-export class ContentCardComponent {
-    @Input() stuff: Content;
-    @Input() index: number;
-    @Input() last: boolean;
+export class ContentCardComponent implements OnInit {
 
-    constructor() {
+  @Input() item: Content;
+  @Input () last: boolean;
 
-        }
+  constructor() { }
 
-
-    console(){
-        console.log(this.stuff.contentId);
-    }
+  ngOnInit() {
+  }
+  clickImage() {
+    console.log(this.item.id);
+  }
 }
-
-

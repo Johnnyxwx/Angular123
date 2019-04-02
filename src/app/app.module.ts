@@ -1,22 +1,52 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ContentCardComponent } from './content-card/content-card.component';
+import { SafePipe } from './safe.pipe';
 import { ContentListComponent } from './content-list/content-list.component';
+import { ContentCardComponent } from './content-card/content-card.component';
+import { FormsModule } from '@angular/forms';
+import { ContentTypePipe } from './content-type.pipe';
+import { MessagesComponent } from './messages/messages.component';
+import { CreateContentComponent } from './create-content/create-content.component';
+import { HttpClientModule} from '@angular/common/http';
+import { HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { InMemoryDataService} from './in-memory-data.service';
+import { ContentDetailComponent } from './content-detail/content-detail.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RouterModule } from'@angular/router';
 
 @NgModule({
   declarations: [
     AppComponent,
+    SafePipe,
+    ContentListComponent,
     ContentCardComponent,
-    ContentListComponent
+    ContentTypePipe,
+    MessagesComponent,
+    CreateContentComponent,
+    ContentDetailComponent,
+    NotFoundComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule
+      BrowserModule,
+      FormsModule,
+      HttpClientModule,
+      HttpClientInMemoryWebApiModule.forRoot(
+              InMemoryDataService, { dataEncapsulation: false }),
+    RouterModule.forRoot([ //"http://localhost:4200/"
+    { path: 'content/:id', component: ContentDetailComponent },
+    { path: '', component: ContentListComponent },
+    { path: '**', component: NotFoundComponent }
+])
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
+RouterModule.forRoot([  {
+  path: 'content/:id', component: ContentDetailComponent },
+  { path: 'content', component: ContentListComponent },
+  { path: '**', component: NotFoundComponent }])

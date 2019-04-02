@@ -1,3 +1,11 @@
-<p>
- <app-content-card *ngFor="let item of content5; index as i; last as e" [stuff]="item" [index]="i" [last]="e"></app-content-card>
+<app-create-content [(list)]="content"></app-create-content>
+
+
+  <input [(ngModel)]="titleCheck">
+
+
+<button (click)="clickEvent()">Click me for an update!</button>
+
+<p *ngIf="content">
+  <app-content-card *ngFor="let item of content; last as isLast" [item]="item" [last]="isLast"></app-content-card>
 </p>

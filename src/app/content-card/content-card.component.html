@@ -1,26 +1,16 @@
-<div class="content-card" [ngClass]="{'last': last}">
-
-    <img src="{{stuff.imgUrl}}" (click)="console()">
-<br />
-
-  <p class="super-bold">
-    {{stuff.body}}
-  </p>
-  <p>
-  {{stuff.contentId}}
-  </p>
-  <p>
-  {{index}}
-  </p>
-<p>
-  {{stuff.author}}
-</p>
-  <p>
-    {{stuff.tags}}
-  </p>
-
-  <p>
-    {{stuff.type}}
-  </p>
-
+<div class="card-wrapper {{item.type}}" [class.last]="last">
+  <img (click)="clickImage()" [src]="item.imgUrl">
+  <div class="body">
+    <strong>Body:</strong> {{item.body}}
+  </div>
+  <div class="author">
+    <strong>Author:</strong> {{item.author}}
+  </div>
+  <div class="type">
+    <strong>Type:</strong> {{item.type}}
+  </div>
+  <div class="tags">
+    <strong>Tags:</strong><span *ngFor="let tag of item.tags">{{tag}} </span>
+  </div>
 </div>
+<a [routerLink]="['/content',item.id]" routerLinkActive="active">Content Detail</a><br>

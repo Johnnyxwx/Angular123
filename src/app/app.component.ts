@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import {ContentListComponent} from './content-list/content-list.component';
+import {Content} from "./content-card/content-list-helper";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  title = 'as2';
-}
 
+export class AppComponent {
+  title = 'example-project';
+  constructor() {
+  }
+}
